@@ -1,6 +1,29 @@
 <!doctype html>
 <html lang="en">
 <head>
+  
+  <script src="https://www.datadoghq-browser-agent.com/datadog-rum-v4.js" type="text/javascript"></script>
+  <script>
+      window.DD_RUM && window.DD_RUM.init({
+        clientToken: 'pub2b7f0b784914ee9cb8d789066343eeb8',
+        applicationId: '54e03e59-f946-448c-92d8-3dea4998a5ec',
+        site: 'datadoghq.com',
+        service: 'todo',
+        env: 'test',
+        // Specify a version number to identify the deployed version of your application in Datadog 
+        // version: '1.0.0',
+        sampleRate: 100,
+        sessionReplaySampleRate: 20,
+        trackInteractions: true,
+        trackResources: true,
+        trackLongTasks: true,
+        defaultPrivacyLevel: 'mask-user-input',
+      });
+
+      window.DD_RUM &&
+      window.DD_RUM.startSessionReplayRecording();
+  </script>
+  
   <meta charset="utf-8">
   <title>Frontend</title>
   <base href="/">
